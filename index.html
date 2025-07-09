@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bu Inten - Toko Baju Batik</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif;}
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; width: 100%; background: #013220; color: white;
+      display: flex; justify-content: center; padding: 15px; z-index: 1000;
+    }
+    nav a {
+      color: white; margin: 0 15px; text-decoration: none; font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    section {
+      min-height: 100vh; padding: 60px 20px; display: flex;
+      flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+    }
+
+    .hero {
+      background: #013220;
+      color: white;
+    }
+    .hero img {
+      width: 150px; margin-bottom: 20px;
+      border-radius: 10px; background: white; padding: 5px;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; }
+
+    .about, .produk, .testi, .order {
+      background-color: #fefefe;
+    }
+    .about p, .testi p {
+      max-width: 700px; font-size: 1.1rem; color: #444;
+    }
+    .produk h2, .testi h2, .order h2 {
+      margin-bottom: 20px; font-size: 2rem; color: #013220;
+    }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; max-width: 1000px; margin-top: 20px;
+    }
+    .card {
+      background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+    .card img {
+      width: 100%; height: 280px; object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 { margin: 10px 0 5px; color: #013220; }
+    .card p { font-size: 0.9rem; color: #555; }
+
+    .testi .quote {
+      font-style: italic;
+      margin: 10px auto;
+      max-width: 600px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      margin-top: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #013220;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#home">Beranda</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#produk">Produk</a>
+  <a href="#testi">Testimoni</a>
+  <a href="#pesan">Pesan</a>
+</nav>
+
+<!-- Slide 1: Hero -->
+<section class="hero" id="home">
+ <img src="assets/img/logo.jpg" alt="Bu Inten Logo">
+  <h1>Bu Inten</h1>
+  <p>Fashion Store Jogja - Batik Elegan & Modern</p>
+</section>
+
+<!-- Slide 2: Tentang Kami -->
+<section class="about" id="tentang">
+  <h2>Tentang Bu Inten</h2>
+  <p>Bu Inten adalah fashion store di Yogyakarta yang menyediakan beragam pilihan baju batik elegan dan modern, cocok untuk acara resmi maupun santai. Produk kami dibuat dari bahan berkualitas tinggi, dengan desain yang memadukan budaya dan tren kekinian.</p>
+</section>
+
+<!-- Slide 3: Produk -->
+<section class="produk" id="produk">
+  <h2>Koleksi Batik</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="assets/img/batik1.jpg" alt="Batik Pria">
+      <h3>Batik Pria Elegan</h3>
+      <p>Rp 150.000</p>
+    </div>
+    <div class="card">
+      <img src="assets/img/batik2.jpg" alt="Batik Wanita">
+      <h3>Batik Wanita Motif Klasik</h3>
+      <p>Rp 165.000</p>
+    </div>
+    <div class="card">
+      <img src="assets/img/batik3.jpg" alt="Daster">
+      <h3>Batik Unisex Premium</h3>
+      <p>Rp 180.000</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: Testimoni -->
+<section class="testi" id="testi">
+  <h2>Testimoni Pelanggan</h2>
+  <p class="quote">"Saya suka banget batik dari Bu Inten, bahannya adem dan desainnya kekinian!" – Rina, Jogja</p>
+  <p class="quote">"Pelayanan cepat, dan batiknya cocok banget buat acara kantor. Recommended!" – Dwi, Sleman</p>
+</section>
+
+<!-- Slide 5: Pemesanan -->
+<section class="order" id="pesan">
+  <h2>Formulir Pemesanan</h2>
+  <form id="orderForm">
+    <label for="nama">Nama Lengkap</label>
+    <input type="text" id="nama" required>
+
+    <label for="produk">Pilih Produk</label>
+    <select id="produkSelect" required>
+      <option value="">-- Pilih Produk --</option>
+      <option value="Batik Pria Elegan">Batik Pria Elegan</option>
+      <option value="Batik Wanita Motif Klasik">Batik Wanita Motif Klasik</option>
+      <option value="Batik Unisex Premium">Batik Unisex Premium</option>
+    </select>
+
+    <label for="ukuran">Ukuran</label>
+    <select id="ukuran" required>
+      <option value="">-- Pilih Ukuran --</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <label for="catatan">Catatan</label>
+    <textarea id="catatan" rows="3" placeholder="Contoh: Bungkus untuk kado."></textarea>
+
+    <button type="submit">Kirim via WhatsApp</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Bu Inten - Fashion Store Jogja
+</footer>
+
+<!-- WhatsApp Script -->
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const produk = document.getElementById("produkSelect").value;
+    const ukuran = document.getElementById("ukuran").value;
+    const catatan = document.getElementById("catatan").value || "-";
+
+    const msg = `Halo Bu Inten, saya ingin pesan batik:\n\n` +
+                `Nama: ${nama}\nProduk: ${produk}\nUkuran: ${ukuran}\nCatatan: ${catatan}\n\nTerima kasih!`;
+
+    const encoded = encodeURIComponent(msg);
+    const wa = "6288287956222"; // Ganti dengan nomor WA Anda
+    window.open(`https://wa.me/${wa}?text=${encoded}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
